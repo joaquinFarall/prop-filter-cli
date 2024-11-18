@@ -1,0 +1,23 @@
+{
+  "preset": "ts-jest",
+  "testEnvironment": "node",
+  "clearMocks": true,
+  "testMatch": ["**/tests/**/*.test.ts"],
+  "collectCoverageFrom": ["src/**/*.ts"],
+  "extensionsToTreatAsEsm": [".ts"],
+  "transform": {
+    "^.+\\.ts?$": ["ts-jest", { "useESM": true }]
+  },
+  "moduleNameMapper": {
+    "^(\\.{1,2}/.*)\\.js$": "$1",
+    "^@/(.*)\\.js$": "<rootDir>/src/$1",
+    "^@config/(.*)\\.js$": "<rootDir>/config/$1",
+    "^@models(.*)\\.js$": "<rootDir>/src/models/$1",
+    "^@repositories(.*)\\.js$": "<rootDir>/src/repositories/$1",
+    "^@services(.*)\\.js$": "<rootDir>/src/services/$1",
+    "^@utils(.*)\\.js$": "<rootDir>/src/utils/$1",
+    "^@tests(.*)\\.js$": "<rootDir>/tests/$1"
+  },
+  "coveragePathIgnorePatterns": ["/node_modules/", "/config/", ".*/index.ts$", ".*/app.ts$", "/models/", "/routes/"],
+  "testPathIgnorePatterns": ["/node_modules/", "/dist/"]
+}
